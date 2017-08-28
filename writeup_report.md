@@ -51,31 +51,31 @@ My model is based on the Nvidia model. I've read an article from [Paul Heraty](h
 
 <img src="submission_res/nvidia_model.png" width="480" alt="Combined Image" />
 
-The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The data is normalized in the model using a Keras lambda layer and cropped using Keras cropping2D layer to remove insignificant parts of input images such as landscape on top and car's part from bottom of the image. 
-The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the number of neurons in them are powers of two.
+The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The data is normalized in the model using a Keras lambda layer and cropped using a Keras cropping2D layer to remove insignificant parts of input images such as landscape on top and car's part from bottom of the image. 
+The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the numbers of neurons are powers of two.
 
 I also used hint from Yazeed Alrubyli in his article ["Behavioral Cloning: Tiny Mistake Cost Me 15 days"](https://becominghuman.ai/behavioral-cloning-tiny-mistake-cost-me-15-days-23dd13a3b525), so I changed image loading from cv2 lib to matplot lib, which greatly improved model learning process.  
 
 ####2. Attempts to reduce overfitting in the model
 
 The model contains dropout layers after fully connected layers in order to reduce overfitting.
-I also shuffled training data, so model learns how to drive and not just blindly copies moves from human driver. 
+I also shuffled the training data, so the model learns how to drive and not just blindly copies moves from human driver. 
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-I chose to split my data in the way so 80% of data became training set and 20% of data became validation set.
+I chose to split my data in the way so 80% of data became a training set and 20% of data became a validation set.
 
 ####3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually.
-I played with a different number of epochs with my data and I found out that the model starts overfitting the data after 4 or 5 epochs. I chose 4 epochs for the final model. 
+I played with a different number of epochs with my data and I found out that the model starts overfitting after 4 or 5 epochs. I chose 4 epochs for the final model. 
 
 ####4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road.
-From the beginning of this project, I wanted to make a model which is able to successfully drive both tracks from the simulator. I used test data from lectures which gave me 8036 images with steering angles from the first track. When I recorded data only from the second track. I recorded driving forward and backward on the second track, which gave me additional 11071 images with steering angles. I also recorded smaller dataset with recovery measures, so model learned how to get back to the road from left and right angles of the track. 
+From the beginning of this project, I wanted to make a model which is able to successfully drive both tracks from the simulator. I used test data from lectures which gave me 8036 images with steering angles from the first track. When I recorded data only from the second track. I recorded driving forward and backward on the second track, which gave me additional 11071 images with steering angles. I also recorded a smaller dataset with recovery measures, so the model learned how to get back to the road from left and right angles of the track. 
 My total number of images in the dataset is 20204.
 
 ### Results
 
-I was able to build a model which successfully passed both tracks. I also played for a bit with drive.py, trying different speed and I was surprised what my model performed pretty well even on a high speed, such as 30 km/hour which is 3 times more than the speed on which it was trained. Although the model performs well, I should definitely include throttle control to it in the future in order to successfully pass the tracks in optimal time with smart speed control. I also will consider adding additional preprocessing, such as lane detection and grayscaling the images.  
+I was able to build a model which successfully passed both tracks. I also played for a bit with drive.py, trying different speed and I was surprised to see that my model performed pretty well even on a high speed, such as 30 km/hour which is 3 times more than the speed on which it was trained. Although the model performs well, definitely I should include throttle control to it in the future in order to successfully pass the tracks in optimal time with smart speed control. I also consider adding additional data preprocessing, such as lane detection and grayscaling the images to improve stability of the model.  
 
