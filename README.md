@@ -8,7 +8,7 @@ Overview
 ---
 This repository contains files for the Behavioral Cloning Project.
 
-In this project, I use what you've learned about deep neural networks and convolutional neural networks to clone driving behavior. You trained, validated and tested a model using Keras. The model outputs a steering angle to an autonomous vehicle in a simulator provided by Udacity.
+In this project, I use what I've learned about deep neural networks and convolutional neural networks to clone driving behavior. I trained, validated and tested a model using Keras. The model outputs a steering angle to an autonomous vehicle in a simulator provided by Udacity.
 
 To meet specifications, the project contains five files: 
 * model.py (script used to create and train the model)
