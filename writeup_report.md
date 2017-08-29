@@ -55,9 +55,9 @@ The data is normalized in the model using a Keras lambda layer and cropped using
 
 This is a visualization of my preprocessing pipeline applied to random images from the dataset:
 
-<img src="submission_res/image_preprocessing.png" width="480" alt="Combined Image" />
-<img src="submission_res/image_preprocessing_2.png" width="480" alt="Combined Image" />
-<img src="submission_res/image_preprocessing_3.png" width="480" alt="Combined Image" />
+<img src="submission_res/image_preprocessing.png" width="720" alt="Combined Image" />
+<img src="submission_res/image_preprocessing_2.png" width="720" alt="Combined Image" />
+<img src="submission_res/image_preprocessing_3.png" width="720" alt="Combined Image" />
 
 The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the numbers of neurons are powers of two.
 
