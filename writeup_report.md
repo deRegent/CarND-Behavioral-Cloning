@@ -53,9 +53,11 @@ My model is based on the Nvidia model. I've read an article from [Paul Heraty](h
 
 The data is normalized in the model using a Keras lambda layer and cropped using a Keras cropping2D layer to remove insignificant parts of input images such as landscape on top and car's part from bottom of the image. 
 
-This is a visualization of my preprocessing pipeline on a random image from the dataset:
+This is a visualization of my preprocessing pipeline applied to random images from the dataset:
 
 <img src="submission_res/image_preprocessing.png" width="480" alt="Combined Image" />
+<img src="submission_res/image_preprocessing_1.png" width="480" alt="Combined Image" />
+<img src="submission_res/image_preprocessing_2.png" width="480" alt="Combined Image" />
 
 The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the numbers of neurons are powers of two.
 
