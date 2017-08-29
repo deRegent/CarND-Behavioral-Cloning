@@ -45,14 +45,19 @@ The model.py file contains the code for training and saving the convolution neur
 
 ### Model Architecture and Training Strategy
 
-####1. Model architecture
+####1. Model architecture and preprocessing
 
 My model is based on the Nvidia model. I've read an article from [Paul Heraty](https://slack-files.com/T2HQV035L-F50B85JSX-7d8737aeeb) which was suggested in project desription. He suggested to use Nvidia's pipeline, so I've decided to give it a try and it worked pretty well.
 
 <img src="submission_res/nvidia_model.png" width="480" alt="Combined Image" />
 
-The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The data is normalized in the model using a Keras lambda layer and cropped using a Keras cropping2D layer to remove insignificant parts of input images such as landscape on top and car's part from bottom of the image. 
-The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the numbers of neurons are powers of two.
+The data is normalized in the model using a Keras lambda layer and cropped using a Keras cropping2D layer to remove insignificant parts of input images such as landscape on top and car's part from bottom of the image. 
+
+This is a visualization of my preprocessing pipeline on a random image from the dataset:
+
+<img src="submission_res/image_preprocessing.png" width="480" alt="Combined Image" />
+
+The model includes 5 convolutional layers with RELU activations to introduce nonlinearity. The model also includes 4 fully connected layers. I slightly changed number of neurons comparing to the Nvidia's model, so the numbers of neurons are powers of two.
 
 I also used hint from Yazeed Alrubyli in his article ["Behavioral Cloning: Tiny Mistake Cost Me 15 days"](https://becominghuman.ai/behavioral-cloning-tiny-mistake-cost-me-15-days-23dd13a3b525), so I changed image loading from cv2 lib to matplot lib, which greatly improved model learning process.  
 
